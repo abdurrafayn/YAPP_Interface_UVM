@@ -10,7 +10,7 @@ module top;
 
     initial begin
 
-        run_test("base_test");
+        run_test("short_packet_test");
     end
     
 //         p1 = new("p1");

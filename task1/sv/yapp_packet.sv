@@ -81,3 +81,34 @@ class yapp_packet extends uvm_sequence_item;
 
 
 endclass: yapp_packet
+
+
+class short_yapp_packet extends yapp_packet;
+
+`uvm_object_utils(short_yapp_packet)
+
+
+`uvm_object_utils_begin(yapp_packet)
+
+    `uvm_field_int(addr,UVM_ALL_ON)
+    `uvm_field_int(length,UVM_ALL_ON)
+    `uvm_field_array_int(payload,UVM_ALL_ON)
+    `uvm_field_int(parity,UVM_ALL_ON)
+    `uvm_field_enum(parity_type_e, parity_type, UVM_ALL_ON)
+    `uvm_field_int(packet_delay,UVM_ALL_ON)
+  `uvm_object_utils_end
+
+  function new(string name = "short_yapp_packet");
+    super.new(name);
+  endfunction
+
+constraint cons_addr { addr != 2;} 
+
+constraint c_length {length <15;}
+
+
+
+endclass: short_yapp_packet
+
+
+

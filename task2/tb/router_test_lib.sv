@@ -14,7 +14,9 @@ class base_test extends uvm_test;
                                 "default_sequence",
                                 yapp_5_packets::get_type());
 
-        inst_tb = new("inst_tb", this);
+        // inst_tb = new("inst_tb", this);
+        inst_tb = router_tb::type_id::create("inst_tb", this);
+        uvm_config_int::set( this, "*", "recording_detail", 1);
         `uvm_info("test_phase","Build phase of test is executing", UVM_HIGH);
     endfunction: build_phase
 
@@ -25,6 +27,10 @@ class base_test extends uvm_test;
         function void start_of_simulation_phase(uvm_phase phase);
         `uvm_info(get_type_name(), "Running Simulation in Test class", UVM_HIGH);
         
+    endfunction
+
+    function void check_phase(uvm_phase phase);
+        check_config_usage();
     endfunction
 endclass //className extends superClass
 
@@ -37,15 +43,20 @@ class test2 extends base_test;
         super.new(name, parent);
     endfunction //new()
 
-    // router_tb inst2_tb;
-
-    // function void build_phase(uvm_phase phase);
-    //     super.build_phase(phase);
-    //     inst2_tb = new("inst2_tb", this);
-    //     `uvm_info("test2","Build phase of test2 is executing", UVM_HIGH);
-    // endfunction: build_phase
-
-    // function void end_of_elaboration_phase(uvm_phase phase);
-    //     uvm_top.print_topology();
-    // endfunction
 endclass //className extends superClass
+
+class short_packet_test extends base_test;
+
+    `uvm_component_utils(short_packet_test)
+    
+    function new(string name="short_packet_test", uvm_component parent);
+        super.new(name, parent);
+    endfunction 
+
+
+    function void build_phase(uvm_phase phase);
+        set_type_override_by_type(yapp_packet::get_type(), short_yapp_packet::get_type());
+        super.build_phase(phase);
+    endfunction
+
+endclass

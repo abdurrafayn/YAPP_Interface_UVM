@@ -2,7 +2,7 @@ class yapp_driver extends uvm_driver#(yapp_packet);
 
     `uvm_component_utils(yapp_driver)
 
-    function new(string name = "yapp_driver", uvm_component parent = null);
+    function new(string name = "yapp_driver", uvm_component parent);
         super.new(name,parent);
     endfunction
 
@@ -18,10 +18,9 @@ class yapp_driver extends uvm_driver#(yapp_packet);
     
     task send_to_dut(yapp_packet req);
     #10ns;
-        `uvm_info(get_type_name(), "Running Simulation in Driver class", UVM_HIGH);
-
-    
+         `uvm_info ("DRIVER", $sformatf("Packet is \n%s", req.sprint()), UVM_LOW);
     endtask
+
     function void start_of_simulation_phase(uvm_phase phase);
         `uvm_info(get_type_name(), "Running Simulation in Driver class", UVM_HIGH);
         

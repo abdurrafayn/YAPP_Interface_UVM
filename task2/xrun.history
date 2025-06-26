@@ -8,3 +8,15 @@ s7(26Jun2025:17:34:38):  xrun -f file.f
 s8(26Jun2025:17:39:03):  xrun -f file.f 
 s9(26Jun2025:17:50:39):  xrun -f file.f 
 s10(26Jun2025:17:54:40):  xrun -f file.f 
+s11(26Jun2025:19:22:56):  xrun -access +rwc -uvm -f file.f 
+s12(26Jun2025:19:23:41):  xrun -access +rwc -uvm -f file.f 
+s13(26Jun2025:19:24:22):  xrun -access +rwc -uvm -f file.f 
+s14(26Jun2025:19:24:56):  xrun -access +rwc -uvm -f file.f 
+s15(26Jun2025:19:25:34):  xrun -access +rwc -uvm -f file.f 
+s16(26Jun2025:19:26:55):  xrun -access +rwc -uvm -f file.f 
+s17(26Jun2025:19:30:15):  xrun -access +rwc -uvm -f file.f 
+s18(26Jun2025:19:31:42):  xrun -access +rwc -uvm -f file.f 
+s19(26Jun2025:19:32:59):  xrun -access +rwc -uvm -f file.f 
+s20(26Jun2025:19:34:48):  xrun -access +rwc -uvm -f file.f 
+s21(26Jun2025:19:35:37):  xrun -access +rwc -uvm -f file.f 
+s22(26Jun2025:19:42:37):  xrun -access +rwc -uvm -f file.f 

@@ -12,7 +12,9 @@ class router_tb extends uvm_env;
 
     function void build_phase(uvm_phase phase);
     
-        environment = new("environment", this);
+        // environment = new("environment", this);
+
+        environment = yapp_env::type_id::create("environment", this);
         
         super.build_phase(phase);
         `uvm_info("build_phase","Build base of base test is executing", UVM_HIGH);

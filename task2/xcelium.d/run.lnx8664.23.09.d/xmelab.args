@@ -6,6 +6,8 @@
 +SVSEED=random
 -loadpli
 /home/cc/mnt/XCELIUM2309/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmpli.so:uvm_pli_boot
+-ACCESS
++rwc
 -no_analogsolver
 -MESSAGES
 -XLMODE
