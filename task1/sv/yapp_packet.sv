@@ -7,7 +7,7 @@ typedef enum { GOOD_PARITY, BAD_PARITY } parity_type_e;
 
 class yapp_packet extends uvm_sequence_item;
 
-// Follow the lab instructions to create the packet.
+// Follow the lab instructions to create the packet...
 // Place the packet declarations in the following order:
 
   rand bit [1:0] addr;
